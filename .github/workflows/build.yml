@@ -1,4 +1,4 @@
-name: Compilar APK Oficial
+name: Compilar APK
 
 on:
   workflow_dispatch:
@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Compilar con Buildozer Action
-        uses: ArtemSydoryk/buildozer-action@v1
+      - name: Build con Buildozer
+        uses: ArtemSydoryk/buildozer-action@v1.2.0
         with:
           command: buildozer -v android debug
           buildozer_version: 1.5.0
